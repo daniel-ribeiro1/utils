@@ -1,0 +1,11 @@
+<section 
+  class="modal"
+  *ngIf="isOpen">
+  <div 
+    class="body" 
+    [ngStyle]="{ 'max-width': maxWidth }">
+    <ng-content></ng-content>
+  </div>
+
+  <div class="background" (click)="close()"></div>
+</section>

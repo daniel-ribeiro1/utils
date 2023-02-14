@@ -1,0 +1,27 @@
+<section>
+  <button (click)="openModal('modal-1')">Modal 1</button>
+  <button (click)="openModal('modal-2')">Modal 2</button>
+  <button (click)="openModal('modal-3')">Modal 3</button>
+</section>
+
+<modal-manager 
+  *ngIf="isModalOpen" 
+  [(isOpen)]="isModalOpen">
+  <ng-container [ngSwitch]="modalId">
+    <app-modal 
+      *ngSwitchCase="'modal-1'" 
+      title="Modal 1">
+    </app-modal>
+
+    <app-modal 
+      *ngSwitchCase="'modal-2'" 
+      title="Modal 2">
+    </app-modal>
+
+    <app-modal 
+      *ngSwitchCase="'modal-3'" 
+      title="Modal 3">
+    </app-modal>
+  </ng-container>
+</modal-manager>
+
